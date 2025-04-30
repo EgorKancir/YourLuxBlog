@@ -2,9 +2,9 @@
   "name": "yourluxblog",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "",
+  "homepage": "https://github.com/EgorKancir/YourLuxBlog.git",
   "scripts": {
-    "build": "parcel build index.html --public-url //",
+    "build": "parcel build index.html --public-url /YourLuxBlog/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "parcel-bundler": "^1.12.5"
   }
 }
