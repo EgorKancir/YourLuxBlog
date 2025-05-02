@@ -1,1 +1,3 @@
-console.log("Blog");
+import { getBlog } from "./getBlogs";
+
+getBlog();
