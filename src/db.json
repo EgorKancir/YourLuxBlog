@@ -1,22 +1,127 @@
 {
-    "blogs": [
-        {
-            "id": 1,
-            "title": "First Blog",
-            "author": "Yehor",
-            "date": "30/04/2025",
-            "article": {
-                "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum explicabo modi nulla alias beatae. Omnis commodi vitae adipisci qui repellat sed, molestiae dolorum doloribus in? Praesentium, veniam qui, consequuntur aliquid eum minima, ipsum maiores natus debitis accusantium repellat numquam sequi.",
-                "comments": [
-                    {
-                        "avatar": "https://placehold.co/400",
-                        "userName": "Tom",
-                        "date": "30/04/2025",
-                        "country": "Poland",
-                        "mainText": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium rem porro nam, nesciunt molestias vero."
-                    }
-                ]
-            }
-        }
-    ]
+  "posts": [
+    {
+      "id": "2erf",
+      "title": "City Lights and Coffee Nights",
+      "author": "Marco Vega",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=marco456",
+      "text": "Wandering through the neon-lit streets, the aroma of coffee led us to a hidden gem in the city.",
+      "cover": "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/705792/pexels-photo-705792.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "3asd",
+      "title": "Ocean Breeze Escape",
+      "author": "Nina Torres",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=nina789",
+      "text": "The waves whispered secrets as we walked along the shore. Pure peace, no noise, just nature.",
+      "cover": "https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "4cvb",
+      "title": "Audi RS",
+      "author": "Yehor Kantsyr 🙂",
+      "text": "Audi RS — втілення спортивної потужності та німецької досконалості\nМодельна лінійка Audi RS (RennSport) є найпотужнішою і найдинамічнішою у сімействі Audi. Ці автомобілі створені для тих, хто прагне поєднання преміального комфорту, витонченого дизайну та вражаючої продуктивності. Розроблені у співпраці з Audi Sport GmbH, моделі RS мають вдосконалені двигуни, спортивну підвіску, аеродинамічні елементи та повний привід quattro, що забезпечує максимальне зчеплення у будь-яких умовах.\n\nСеред найвідоміших представників серії — Audi RS3, RS4 Avant, RS6 Avant, RS7 Sportback та RS Q8. Наприклад, Audi RS6 — це універсал, який здатен змагатися з суперкарами: його 4.0-літровий V8 з турбонаддувом розганяє авто до 100 км/год лише за 3.6 секунди.\n\nAudi RS — це не просто швидкість, а стиль життя для тих, хто хоче більше, ніж просто пересування.",
+      "cover": "https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/5733734/pexels-photo-5733734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/16158834/pexels-photo-16158834/free-photo-of-audi-r8.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/18502430/pexels-photo-18502430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/14277561/pexels-photo-14277561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "5drt",
+      "title": "Desert Sunset Reflections",
+      "author": "Amira Khan",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=amiradesert",
+      "text": "The golden light painted the dunes and reminded us how vast and beautiful the world is.",
+      "cover": "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/256369/pexels-photo-256369.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "8b01",
+      "title": "Audi RS",
+      "author": "Yehor Kantsyr 👌🏻",
+      "text": "Audi RS — втілення спортивної потужності та німецької досконалості\nМодельна лінійка Audi RS (RennSport) є найпотужнішою і найдинамічнішою у сімействі Audi. Ці автомобілі створені для тих, хто прагне поєднання преміального комфорту, витонченого дизайну та вражаючої продуктивності. Розроблені у співпраці з Audi Sport GmbH, моделі RS мають вдосконалені двигуни, спортивну підвіску, аеродинамічні елементи та повний привід quattro, що забезпечує максимальне зчеплення у будь-яких умовах.\n\nСеред найвідоміших представників серії — Audi RS3, RS4 Avant, RS6 Avant, RS7 Sportback та RS Q8. Наприклад, Audi RS6 — це універсал, який здатен змагатися з суперкарами: його 4.0-літровий V8 з турбонаддувом розганяє авто до 100 км/год лише за 3.6 секунди.\n\nAudi RS — це не просто швидкість, а стиль життя для тих, хто хоче більше, ніж просто пересування.",
+      "cover": "https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/5733734/pexels-photo-5733734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/16158834/pexels-photo-16158834/free-photo-of-audi-r8.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/18502430/pexels-photo-18502430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/14277561/pexels-photo-14277561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "74a0",
+      "title": "в",
+      "author": "в",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=eal57nt3",
+      "text": "в",
+      "cover": "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+        "https://images.pexels.com/photos/13344137/pexels-photo-13344137.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "baa2",
+      "title": "kkk",
+      "author": "kkkk",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=hn9fp6tl",
+      "text": "kkkk",
+      "cover": "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+        "https://images.pexels.com/photos/13344137/pexels-photo-13344137.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+      ],
+      "date": "Thu May 08 2025"
+    },
+    {
+      "id": "31d0",
+      "title": "Post",
+      "author": "Yehor",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=3t8w627y",
+      "text": "djdjkdkdkdkdk",
+      "cover": "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+        "https://images.pexels.com/photos/13344137/pexels-photo-13344137.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+      ],
+      "date": "Fri May 09 2025"
+    },
+    {
+      "id": "b193",
+      "title": "2",
+      "author": "2",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=h0ckphxt",
+      "text": "2",
+      "cover": "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagesUrl": [
+        "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load",
+        "https://images.pexels.com/photos/13344137/pexels-photo-13344137.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+      ],
+      "date": "Fri May 09 2025"
+    }
+  ]
 }
