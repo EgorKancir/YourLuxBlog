@@ -6054,55 +6054,507 @@ exports.isCancel = isCancel;
 exports.CanceledError = CanceledError;
 exports.AxiosError = AxiosError;
 exports.Axios = Axios;
-},{"./lib/axios.js":"node_modules/axios/lib/axios.js"}],"src/js/getBlogs.js":[function(require,module,exports) {
-"use strict";
+},{"./lib/axios.js":"node_modules/axios/lib/axios.js"}],"node_modules/debounce/index.js":[function(require,module,exports) {
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function debounce(function_) {
+  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 100;
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  if (typeof function_ !== 'function') {
+    throw new TypeError("Expected the first parameter to be a function, got `".concat(_typeof(function_), "`."));
+  }
+  if (wait < 0) {
+    throw new RangeError('`wait` must not be negative.');
+  }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getBlog = getBlog;
-var _axios = _interopRequireDefault(require("axios"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+  // TODO: Deprecate the boolean parameter at some point.
+  var _ref = typeof options === 'boolean' ? {
+      immediate: options
+    } : options,
+    immediate = _ref.immediate;
+  var storedContext;
+  var storedArguments;
+  var timeoutId;
+  var timestamp;
+  var result;
+  function run() {
+    var callContext = storedContext;
+    var callArguments = storedArguments;
+    storedContext = undefined;
+    storedArguments = undefined;
+    result = function_.apply(callContext, callArguments);
+    return result;
+  }
+  function later() {
+    var last = Date.now() - timestamp;
+    if (last < wait && last >= 0) {
+      timeoutId = setTimeout(later, wait - last);
+    } else {
+      timeoutId = undefined;
+      if (!immediate) {
+        result = run();
+      }
+    }
+  }
+  var debounced = function debounced() {
+    if (storedContext && this !== storedContext && Object.getPrototypeOf(this) === Object.getPrototypeOf(storedContext)) {
+      throw new Error('Debounced method called with different contexts of the same prototype.');
+    }
+    storedContext = this; // eslint-disable-line unicorn/no-this-assignment
+    for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+      arguments_[_key] = arguments[_key];
+    }
+    storedArguments = arguments_;
+    timestamp = Date.now();
+    var callNow = immediate && !timeoutId;
+    if (!timeoutId) {
+      timeoutId = setTimeout(later, wait);
+    }
+    if (callNow) {
+      result = run();
+    }
+    return result;
+  };
+  Object.defineProperty(debounced, 'isPending', {
+    get: function get() {
+      return timeoutId !== undefined;
+    }
+  });
+  debounced.clear = function () {
+    if (!timeoutId) {
+      return;
+    }
+    clearTimeout(timeoutId);
+    timeoutId = undefined;
+  };
+  debounced.flush = function () {
+    if (!timeoutId) {
+      return;
+    }
+    debounced.trigger();
+  };
+  debounced.trigger = function () {
+    result = run();
+    debounced.clear();
+  };
+  return debounced;
+}
+
+// Adds compatibility for ES modules
+module.exports.debounce = debounce;
+module.exports = debounce;
+},{}],"src/js/index.js":[function(require,module,exports) {
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return r; }; var t, r = {}, e = Object.prototype, n = e.hasOwnProperty, o = "function" == typeof Symbol ? Symbol : {}, i = o.iterator || "@@iterator", a = o.asyncIterator || "@@asyncIterator", u = o.toStringTag || "@@toStringTag"; function c(t, r, e, n) { return Object.defineProperty(t, r, { value: e, enumerable: !n, configurable: !n, writable: !n }); } try { c({}, ""); } catch (t) { c = function c(t, r, e) { return t[r] = e; }; } function h(r, e, n, o) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype); return c(a, "_invoke", function (r, e, n) { var o = 1; return function (i, a) { if (3 === o) throw Error("Generator is already running"); if (4 === o) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var u = n.delegate; if (u) { var c = d(u, n); if (c) { if (c === f) continue; return c; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (1 === o) throw o = 4, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = 3; var h = s(r, e, n); if ("normal" === h.type) { if (o = n.done ? 4 : 2, h.arg === f) continue; return { value: h.arg, done: n.done }; } "throw" === h.type && (o = 4, n.method = "throw", n.arg = h.arg); } }; }(r, n, new Context(o || [])), !0), a; } function s(t, r, e) { try { return { type: "normal", arg: t.call(r, e) }; } catch (t) { return { type: "throw", arg: t }; } } r.wrap = h; var f = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var l = {}; c(l, i, function () { return this; }); var p = Object.getPrototypeOf, y = p && p(p(x([]))); y && y !== e && n.call(y, i) && (l = y); var v = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(l); function g(t) { ["next", "throw", "return"].forEach(function (r) { c(t, r, function (t) { return this._invoke(r, t); }); }); } function AsyncIterator(t, r) { function e(o, i, a, u) { var c = s(t[o], t, i); if ("throw" !== c.type) { var h = c.arg, f = h.value; return f && "object" == _typeof(f) && n.call(f, "__await") ? r.resolve(f.__await).then(function (t) { e("next", t, a, u); }, function (t) { e("throw", t, a, u); }) : r.resolve(f).then(function (t) { h.value = t, a(h); }, function (t) { return e("throw", t, a, u); }); } u(c.arg); } var o; c(this, "_invoke", function (t, n) { function i() { return new r(function (r, o) { e(t, n, r, o); }); } return o = o ? o.then(i, i) : i(); }, !0); } function d(r, e) { var n = e.method, o = r.i[n]; if (o === t) return e.delegate = null, "throw" === n && r.i.return && (e.method = "return", e.arg = t, d(r, e), "throw" === e.method) || "return" !== n && (e.method = "throw", e.arg = new TypeError("The iterator does not provide a '" + n + "' method")), f; var i = s(o, r.i, e.arg); if ("throw" === i.type) return e.method = "throw", e.arg = i.arg, e.delegate = null, f; var a = i.arg; return a ? a.done ? (e[r.r] = a.value, e.next = r.n, "return" !== e.method && (e.method = "next", e.arg = t), e.delegate = null, f) : a : (e.method = "throw", e.arg = new TypeError("iterator result is not an object"), e.delegate = null, f); } function w(t) { this.tryEntries.push(t); } function m(r) { var e = r[4] || {}; e.type = "normal", e.arg = t, r[4] = e; } function Context(t) { this.tryEntries = [[-1]], t.forEach(w, this), this.reset(!0); } function x(r) { if (null != r) { var e = r[i]; if (e) return e.call(r); if ("function" == typeof r.next) return r; if (!isNaN(r.length)) { var o = -1, a = function e() { for (; ++o < r.length;) if (n.call(r, o)) return e.value = r[o], e.done = !1, e; return e.value = t, e.done = !0, e; }; return a.next = a; } } throw new TypeError(_typeof(r) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, c(v, "constructor", GeneratorFunctionPrototype), c(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = c(GeneratorFunctionPrototype, u, "GeneratorFunction"), r.isGeneratorFunction = function (t) { var r = "function" == typeof t && t.constructor; return !!r && (r === GeneratorFunction || "GeneratorFunction" === (r.displayName || r.name)); }, r.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, c(t, u, "GeneratorFunction")), t.prototype = Object.create(v), t; }, r.awrap = function (t) { return { __await: t }; }, g(AsyncIterator.prototype), c(AsyncIterator.prototype, a, function () { return this; }), r.AsyncIterator = AsyncIterator, r.async = function (t, e, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(h(t, e, n, o), i); return r.isGeneratorFunction(e) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, g(v), c(v, u, "Generator"), c(v, i, function () { return this; }), c(v, "toString", function () { return "[object Generator]"; }), r.keys = function (t) { var r = Object(t), e = []; for (var n in r) e.unshift(n); return function t() { for (; e.length;) if ((n = e.pop()) in r) return t.value = n, t.done = !1, t; return t.done = !0, t; }; }, r.values = x, Context.prototype = { constructor: Context, reset: function reset(r) { if (this.prev = this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(m), !r) for (var e in this) "t" === e.charAt(0) && n.call(this, e) && !isNaN(+e.slice(1)) && (this[e] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0][4]; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(r) { if (this.done) throw r; var e = this; function n(t) { a.type = "throw", a.arg = r, e.next = t; } for (var o = e.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i[4], u = this.prev, c = i[1], h = i[2]; if (-1 === i[0]) return n("end"), !1; if (!c && !h) throw Error("try statement without catch or finally"); if (null != i[0] && i[0] <= u) { if (u < c) return this.method = "next", this.arg = t, n(c), !0; if (u < h) return n(h), !1; } } }, abrupt: function abrupt(t, r) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var n = this.tryEntries[e]; if (n[0] > -1 && n[0] <= this.prev && this.prev < n[2]) { var o = n; break; } } o && ("break" === t || "continue" === t) && o[0] <= r && r <= o[2] && (o = null); var i = o ? o[4] : {}; return i.type = t, i.arg = r, o ? (this.method = "next", this.next = o[2], f) : this.complete(i); }, complete: function complete(t, r) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && r && (this.next = r), f; }, finish: function finish(t) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var e = this.tryEntries[r]; if (e[2] === t) return this.complete(e[4], e[3]), m(e), f; } }, catch: function _catch(t) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var e = this.tryEntries[r]; if (e[0] === t) { var n = e[4]; if ("throw" === n.type) { var o = n.arg; m(e); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(r, e, n) { return this.delegate = { i: x(r), r: e, n: n }, "next" === this.method && (this.arg = t), f; } }, r; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function getBlog() {
-  return _getBlog.apply(this, arguments);
-}
-function _getBlog() {
-  _getBlog = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var _yield$axios$get, data;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          _context.prev = 0;
-          _context.next = 3;
-          return _axios.default.get("http://localhost:3000/blogs");
-        case 3:
-          _yield$axios$get = _context.sent;
-          data = _yield$axios$get.data;
-          console.log(data);
-          _context.next = 11;
-          break;
-        case 8:
-          _context.prev = 8;
-          _context.t0 = _context["catch"](0);
-          console.error(_context.t0);
-        case 11:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee, null, [[0, 8]]);
-  }));
-  return _getBlog.apply(this, arguments);
-}
-},{"axios":"node_modules/axios/index.js"}],"src/js/index.js":[function(require,module,exports) {
-"use strict";
+var _require = require("axios"),
+  axios = _require.default;
+var debounce = require("debounce");
+var postForm = document.getElementById("post-form");
+var postsGallery = document.getElementById("postsGallery");
+var postsGalleryAdmin = document.getElementById("postsGallery--admin");
+var addButton = document.querySelector(".post-form__button--add");
+var saveButton = document.querySelector(".post-form__button--save");
+document.addEventListener("DOMContentLoaded", function () {
+  renderPostCard();
+  renderPostCardAdmin();
+});
 
-var _getBlogs = require("./getBlogs");
-(0, _getBlogs.getBlog)();
-},{"./getBlogs":"src/js/getBlogs.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+// Cleaner
+
+function formCleaner() {
+  postForm.reset();
+}
+if (postForm) {
+  postForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var randomSeed = Math.random().toString(36).substring(2, 10);
+    var avatarUrl = "https://api.dicebear.com/7.x/adventurer/png?seed=".concat(randomSeed);
+    var title = postForm.elements.post_title.value;
+    var author = postForm.elements.post_author.value;
+    var authorAvatar = avatarUrl;
+    var text = postForm.elements.post_text.value;
+    var cover = postForm.elements.post_cover.value;
+    var imagesUrl = postForm.elements.post_image_url.value.split(',').map(function (skill) {
+      return skill.trim();
+    });
+    if (cover.length === 0) {
+      cover = "https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+    }
+    if (imagesUrl.length <= 1) {
+      imagesUrl = ["https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load", "https://images.pexels.com/photos/13344137/pexels-photo-13344137.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"];
+    }
+    var postData = {
+      title: title,
+      author: author,
+      authorAvatar: authorAvatar,
+      text: text,
+      cover: cover,
+      imagesUrl: imagesUrl,
+      date: new Date().toDateString()
+    };
+    createPost(postData);
+    formCleaner();
+    alert("The post is published 👌🏻");
+  });
+}
+
+// Post
+function createPost(_x) {
+  return _createPost.apply(this, arguments);
+} // Render
+function _createPost() {
+  _createPost = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(data) {
+    var newPost;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.prev = 0;
+          _context2.next = 3;
+          return axios.post('http://localhost:3000/posts', data);
+        case 3:
+          newPost = _context2.sent;
+          console.log("\u041D\u043E\u0432\u0430 \u0441\u0442\u0430\u0442\u0442\u044F \u0434\u043E\u0434\u0430\u043D\u0430: ".concat(data.title));
+          renderPostCard();
+          renderPostCardAdmin();
+          _context2.next = 12;
+          break;
+        case 9:
+          _context2.prev = 9;
+          _context2.t0 = _context2["catch"](0);
+          console.error("Помилка створення поста:", _context2.t0);
+        case 12:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[0, 9]]);
+  }));
+  return _createPost.apply(this, arguments);
+}
+function renderPostCard(_x2) {
+  return _renderPostCard.apply(this, arguments);
+} // Render Admin
+function _renderPostCard() {
+  _renderPostCard = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(word) {
+    var source, template, _yield$axios$get2, data, searchStatus;
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          source = document.getElementById("post-card__template").innerHTML.trim();
+          template = Handlebars.compile(source);
+          _context3.prev = 2;
+          _context3.next = 5;
+          return axios.get('http://localhost:3000/posts');
+        case 5:
+          _yield$axios$get2 = _context3.sent;
+          data = _yield$axios$get2.data;
+          if (!word) {
+            postsGallery.innerHTML = data.map(function (post) {
+              return template(post);
+            }).join('');
+          } else {
+            searchStatus = data.filter(function (element) {
+              return element.text.toLowerCase().includes(word.toLowerCase());
+            });
+            postsGallery.innerHTML = searchStatus.map(function (post) {
+              return template(post);
+            }).join('');
+          }
+          _context3.next = 13;
+          break;
+        case 10:
+          _context3.prev = 10;
+          _context3.t0 = _context3["catch"](2);
+          console.error("Помилка рендеру:", _context3.t0);
+        case 13:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3, null, [[2, 10]]);
+  }));
+  return _renderPostCard.apply(this, arguments);
+}
+if (document.getElementById("post-card__template--admin")) {
+  function renderPostCardAdmin() {
+    return _renderPostCardAdmin.apply(this, arguments);
+  }
+  function _renderPostCardAdmin() {
+    _renderPostCardAdmin = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var source, template, _yield$axios$get, data;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            source = document.getElementById("post-card__template--admin").innerHTML.trim();
+            template = Handlebars.compile(source);
+            _context.prev = 2;
+            _context.next = 5;
+            return axios.get('http://localhost:3000/posts');
+          case 5:
+            _yield$axios$get = _context.sent;
+            data = _yield$axios$get.data;
+            postsGalleryAdmin.innerHTML = data.map(function (post) {
+              return template(post);
+            }).join('');
+            _context.next = 13;
+            break;
+          case 10:
+            _context.prev = 10;
+            _context.t0 = _context["catch"](2);
+            console.error("Помилка рендеру:", _context.t0);
+          case 13:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[2, 10]]);
+    }));
+    return _renderPostCardAdmin.apply(this, arguments);
+  }
+} else {
+  console.log("Елемента Gallery-Admin__template немає на сторінці");
+}
+
+// Update
+function editElement(_x3) {
+  return _editElement.apply(this, arguments);
+} // DELETE
+function _editElement() {
+  _editElement = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee5(id) {
+    var _yield$axios$get3, data, post;
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.prev = 0;
+          _context5.next = 3;
+          return axios.get('http://localhost:3000/posts');
+        case 3:
+          _yield$axios$get3 = _context5.sent;
+          data = _yield$axios$get3.data;
+          post = data.find(function (p) {
+            return p.id === id;
+          });
+          if (post) {
+            _context5.next = 9;
+            break;
+          }
+          console.error("Post \u0437 ID ".concat(id, " \u043D\u0435 \u0437\u043D\u0430\u0439\u0434\u0435\u043D\u0438\u0439"));
+          return _context5.abrupt("return");
+        case 9:
+          document.getElementById('post_title').value = post.title;
+          document.getElementById('post_author').value = post.author;
+          document.getElementById('post_text').value = post.text;
+          document.getElementById('post_cover').value = post.cover;
+          document.getElementById('post_image_url').value = post.imagesUrl;
+          saveButton.addEventListener('click', /*#__PURE__*/_asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+            var index, url, endpoint, newPost, response;
+            return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+              while (1) switch (_context4.prev = _context4.next) {
+                case 0:
+                  index = data.findIndex(function (p) {
+                    return p.id === id;
+                  });
+                  url = 'http://localhost:3000';
+                  endpoint = 'posts';
+                  newPost = {
+                    id: id,
+                    title: document.getElementById('post_title').value,
+                    author: document.getElementById('post_author').value,
+                    text: document.getElementById('post_text').value,
+                    cover: document.getElementById('post_cover').value,
+                    imagesUrl: document.getElementById('post_image_url').value.split(',').map(function (skill) {
+                      return skill.trim();
+                    }),
+                    date: new Date().toDateString()
+                  };
+                  if (!(index !== -1)) {
+                    _context4.next = 17;
+                    break;
+                  }
+                  _context4.prev = 5;
+                  _context4.next = 8;
+                  return axios.put("".concat(url, "/").concat(endpoint, "/").concat(id), newPost);
+                case 8:
+                  response = _context4.sent;
+                  console.log('Оновлено:', response.data);
+                  renderPostCard();
+                  renderPostCardAdmin();
+                  _context4.next = 17;
+                  break;
+                case 14:
+                  _context4.prev = 14;
+                  _context4.t0 = _context4["catch"](5);
+                  console.error("Не вдалося оновити студента:", _context4.t0);
+                case 17:
+                  saveButton.classList.remove('active');
+                  addButton.classList.remove('disable');
+                  postForm.classList.remove('active');
+                  formCleaner();
+                case 21:
+                case "end":
+                  return _context4.stop();
+              }
+            }, _callee4, null, [[5, 14]]);
+          })));
+          _context5.next = 20;
+          break;
+        case 17:
+          _context5.prev = 17;
+          _context5.t0 = _context5["catch"](0);
+          console.error("Помилка редагування:", _context5.t0);
+        case 20:
+        case "end":
+          return _context5.stop();
+      }
+    }, _callee5, null, [[0, 17]]);
+  }));
+  return _editElement.apply(this, arguments);
+}
+function deleteElement(_x4) {
+  return _deleteElement.apply(this, arguments);
+} ////////////
+function _deleteElement() {
+  _deleteElement = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee6(id) {
+    var _yield$axios$get4, data, index, url, endpoint, response;
+    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
+        case 0:
+          _context6.prev = 0;
+          _context6.next = 3;
+          return axios.get('http://localhost:3000/posts');
+        case 3:
+          _yield$axios$get4 = _context6.sent;
+          data = _yield$axios$get4.data;
+          index = data.findIndex(function (s) {
+            return s.id === id;
+          });
+          if (!(index !== -1)) {
+            _context6.next = 15;
+            break;
+          }
+          url = 'http://localhost:3000';
+          endpoint = 'posts';
+          _context6.next = 11;
+          return axios.delete("".concat(url, "/").concat(endpoint, "/").concat(id));
+        case 11:
+          response = _context6.sent;
+          console.log("\u0421\u0442\u0443\u0434\u0435\u043D\u0442 \u0437 ID ".concat(id, " \u0432\u0438\u0434\u0430\u043B\u0435\u043D\u0438\u0439"));
+          renderPostCard();
+          renderPostCardAdmin();
+        case 15:
+          _context6.next = 20;
+          break;
+        case 17:
+          _context6.prev = 17;
+          _context6.t0 = _context6["catch"](0);
+          console.error("Помилка видалення:", _context6.t0);
+        case 20:
+        case "end":
+          return _context6.stop();
+      }
+    }, _callee6, null, [[0, 17]]);
+  }));
+  return _deleteElement.apply(this, arguments);
+}
+if (postsGalleryAdmin) {
+  postsGalleryAdmin.addEventListener('click', function (event) {
+    var editButton = event.target.closest('.post-card__btn-edit--admin');
+    var deleteBtn = event.target.closest('.post-card__btn-delete--admin');
+    if (editButton) {
+      editElement(editButton.id);
+      saveButton.classList.add('active');
+      addButton.classList.add('disable');
+      postForm.classList.add('active');
+    } else if (deleteBtn) {
+      deleteElement(deleteBtn.id);
+    }
+  });
+}
+
+// Post Page
+
+var mainPostPage = document.querySelector(".main-post-page");
+if (postsGallery) {
+  postsGallery.addEventListener("click", function (event) {
+    var card = event.target.closest(".post-card");
+    if (card) {
+      localStorage.removeItem("selectedPostId");
+      var id = card.dataset.id;
+      console.log("ID картки:", card.dataset.id);
+      localStorage.setItem("selectedPostId", id);
+    } else {
+      console.warn("Елемент #postsGallery не знайдено!");
+    }
+  });
+}
+function renderPostPage(_x5) {
+  return _renderPostPage.apply(this, arguments);
+}
+function _renderPostPage() {
+  _renderPostPage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee7(id) {
+    var sourceEl, source, template, _yield$axios$get5, data, post, html;
+    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
+        case 0:
+          mainPostPage.innerHTML = " ";
+          sourceEl = document.getElementById("post-page__template");
+          if (sourceEl) {
+            _context7.next = 5;
+            break;
+          }
+          console.log("Елемента шаблону немає на сторінці");
+          return _context7.abrupt("return");
+        case 5:
+          source = sourceEl.innerHTML.trim();
+          template = Handlebars.compile(source);
+          _context7.prev = 7;
+          _context7.next = 10;
+          return axios.get('http://localhost:3000/posts');
+        case 10:
+          _yield$axios$get5 = _context7.sent;
+          data = _yield$axios$get5.data;
+          post = data.find(function (element) {
+            return element.id === id;
+          });
+          if (post) {
+            _context7.next = 16;
+            break;
+          }
+          mainPostPage.innerHTML = "<h3 class=\"main-post-page__error-text\">\u041F\u043E\u0441\u0442 \u043D\u0435 \u0437\u043D\u0430\u0439\u0434\u0435\u043D\u043E \uD83D\uDE1E</h3>";
+          return _context7.abrupt("return");
+        case 16:
+          html = template(post);
+          mainPostPage.innerHTML = html;
+          _context7.next = 24;
+          break;
+        case 20:
+          _context7.prev = 20;
+          _context7.t0 = _context7["catch"](7);
+          console.error("Помилка рендеру:", _context7.t0);
+          mainPostPage.innerHTML = "<h3 class=\"main-post-page__error-text\">\u0421\u0442\u0430\u043B\u0430\u0441\u044F \u043F\u043E\u043C\u0438\u043B\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u0456 \u043F\u043E\u0441\u0442\u0430 \uD83D\uDE33</h3>";
+        case 24:
+        case "end":
+          return _context7.stop();
+      }
+    }, _callee7, null, [[7, 20]]);
+  }));
+  return _renderPostPage.apply(this, arguments);
+}
+if (mainPostPage) {
+  var postId = localStorage.getItem("selectedPostId");
+  if (postId) {
+    renderPostPage(postId);
+  } else {
+    console.warn("ID поста не знайдено в localStorage");
+  }
+}
+
+// Search
+
+var searchInput = document.getElementById("search-input");
+searchInput.addEventListener("input", debounce(function () {
+  var inputValue = searchInput.value;
+  renderPostCard(inputValue);
+}, 300));
+},{"axios":"node_modules/axios/index.js","debounce":"node_modules/debounce/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -6127,7 +6579,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53231" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49300" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

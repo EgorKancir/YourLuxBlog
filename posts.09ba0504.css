@@ -1,0 +1,71 @@
+.posts-gallery {
+    padding: 4rem 1rem;
+  }
+  
+  .posts-gallery__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Post Card */
+  .post-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  }
+  
+  .post-card__cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .post-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 1rem;
+    color: #1e1e1e;
+  }
+  
+  .post-card__author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+  
+  .post-card__author-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+  }
+  
+  .post-card__author-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .post-card__date {
+    font-size: 0.85rem;
+    color: #888;
+    padding: 0.5rem 1rem 1rem;
+    margin-top: auto;
+  }
+  
+
+/*# sourceMappingURL=/posts.09ba0504.css.map */
