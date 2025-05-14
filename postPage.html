@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./src/image/png/yourluxblog-logo.png" type="image/x-icon">
     <title>YourLuxBlogPage</title>
-    <link rel="stylesheet" href="./src/css/post-page.css">
+    <link rel="stylesheet" href="./src/css/postPage.css">
     <link rel="stylesheet" href="./src/icomoon/style.css">
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header header--page">
         <div class="container header__content">
             <a class="logo__link" href="./index.html">YourLuxBlog</a>
             <a class="header__account-link" href="./account.html">My account</a>
@@ -24,9 +24,26 @@
                     </li>
                 </ul>
             </nav>
+            <section class="hero">
+                <div class="container hero__slogan-group">
+                    <h2 class="hero__title">Explore the full story</h2>
+                </div>
+            </section>
         </div>
     </header>
-    <main class="main-post-page"></main>
+    <main class="main-post-page">
+        <div class="post-page__content"></div>
+        <form class="post-comment-form" id="comment-form">
+            <h2 class="post-comment-form__title">Leave your comment...</h2>
+            <label class="post-comment-form__label" for="commentatorName">
+                <input class="post-comment-form__input" type="text" id="commentatorName" placeholder="Your Name" required>
+            </label>
+            <label class="post-comment-form__label" for="commentatorComment">
+                <textarea class="post-comment-form__textarea" id="commentatorComment" placeholder="Add your comment" required></textarea>
+            </label>
+            <button class="post-comment-form__submit">Send</button>
+        </form>
+    </main>
     <footer class="footer">
         <div class="container footer__content">
             <div class="footer__top-group">
@@ -58,27 +75,7 @@
             <p class="footer__signature">© 2025 Kantsyr Yehor</p>
         </div>
     </footer>
-
-    <script id="post-page__template" type="text/x-handlebars-template">
-        <section class="post">
-            <div class="post__info-group">
-                <h2 class="post__title">{{title}}</h2>
-                <div class="post__author-info">
-                    <img class="post__author-image" src="{{authorAvatar}}" alt="{{author}}">
-                    <h4 class="post__author-name">{{author}}</h4>
-                </div>
-                <p class="post__date">{{date}}</p>
-            </div>
-            <p class="post__main-text">{{text}}</p>
-            <div class="post__gallery">
-                {{#each imagesUrl}}
-                <img class="post__gallery-image" src="{{this}}" alt="Img">
-                {{/each}}
-            </div>
-        </section>
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
-    <script src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
 </body>
 </html>

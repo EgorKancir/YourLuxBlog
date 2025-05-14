@@ -1,15 +1,15 @@
 {
   "name": "yourluxblog",
   "version": "1.0.0",
-  "main": "index.js",
   "homepage": "https://github.com/EgorKancir/YourLuxBlog.git",
+  "type": "module",
   "scripts": {
     "build": "parcel build index.html --public-url /YourLuxBlog/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html",
-    "clean": "parcel clean",
+    "dev": "parcel postPage.html",
+    "clean": "rm -rf .parcel-cache dist",
     "server": "npx json-server ./src/db.json"
   },
   "keywords": [],
@@ -17,13 +17,15 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "buffer": "^6.0.3",
     "gh-pages": "^6.3.0",
-    "parcel-bundler": "^1.12.5"
+    "parcel": "^2.15.0"
   },
   "dependencies": {
     "@dicebear/collection": "^9.2.2",
     "@dicebear/core": "^9.2.2",
     "axios": "^1.9.0",
+    "basiclightbox": "^5.0.4",
     "debounce": "^2.2.0",
     "handlebars": "^4.7.8",
     "json-server": "^1.0.0-beta.3"

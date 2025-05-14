@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header header--page">
         <div class="container header__content">
             <a class="logo__link" href="./index.html">YourLuxBlog</a>
             <a class="header__account-link" href="./account.html">My account</a>
@@ -24,11 +24,17 @@
                     </li>
                 </ul>
             </nav>
+            <section class="hero">
+                <div class="container hero__slogan-group">
+                    <h2 class="hero__title">Welcome to the journal of everything</h2>
+                </div>
+            </section>
         </div>
     </header>
-    <main class="main">
+    <main class="main-posts">
         <div class="search">
             <label class="search__label" for="search-input">
+                Search:
                 <input class="search__input" id="search-input" type="text">
             </label>
         </div>
@@ -67,20 +73,8 @@
             <p class="footer__signature">© 2025 Kantsyr Yehor</p>
         </div>
     </footer>
-
-    <script id="post-card__template" type="text/x-handlebars-template">
-        <a class="post-card" data-id="{{id}}" href="./postPage.html" target="_blank">
-            <img class="post-card__cover" src="{{cover}}" alt="img">
-            <h3 class="post-card__title">{{title}}</h3>
-            <div class="post-card__author-info">
-                <img class="post-card__author-image" src="{{authorAvatar}}" alt="{{author}}">
-                <h4 class="post-card__author-name">{{author}}</h4>
-            </div>
-            <p class="post-card__date">{{date}}</p>
-        </a>
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
-    <script src="./src/js/index.js"></script>
+    <script type="module" src="./src/js/index.js"></script>
 </body>
 </html>
+

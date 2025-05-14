@@ -1,0 +1,170 @@
+.main__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+.main__title {
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    color: white;
+    text-align: center;
+}
+.main__subtitle {
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    color: white;
+    text-align: center;
+}
+.main__paragraf {
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+}
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+.about-us__title {
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    color: white;
+    text-align: center;
+}
+.about-us__author-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.about-us__author-image {
+    width: 600px;
+    height: auto;
+    border-radius: 20px;
+}
+.about-us__author-text-group {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+.about-us__author-name {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    color: white;
+    text-align: start;
+}
+.about-us__author-description {
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: start;
+}
+.popular-personalities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+.popular-personalities__title {
+    width: 600px;
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    color: white;
+    text-align: center;
+}
+.popular-personalities__gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.popular-personalities__person-element {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.popular-personalities__person-image {
+    object-fit: cover;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+}
+.popular-personalities__person-name {
+    color: black;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    text-align: center;
+}
+.popular-personalities__person-paragraf {
+    width: 300px;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
+}
+.advantages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+.advantages__title {
+    font-size: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    color: white;
+    text-align: center;
+}
+.advantages__list {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    list-style: decimal-leading-zero;
+}
+.advantages__list-item {
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: start;
+}
+.quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: beige;
+    padding: 20px;
+    border-radius: 20px;
+}
+.quote__text {
+    font-size: 26px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+}
+.quote__authot-wort {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    text-align: center;
+}

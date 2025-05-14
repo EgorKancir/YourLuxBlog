@@ -1,3 +1,7 @@
+.header--page {
+  background: linear-gradient(180deg,rgba(0, 0, 0, 0.6) 100%, rgba(255, 255, 255, 0) 100%), url("https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/2019/products/Taycan-Interieur/pictures/b-P19_0572_a3_rgb.jpg/jcr:content/b-P19_0572_a3_rgb.jpg") !important;
+  background-position: center !important;
+}
 .post-form {
   max-width: 600px;
   margin: 40px auto;
@@ -10,6 +14,25 @@
   gap: 20px;
   color: #f5f5f5;
   font-family: 'Segoe UI', sans-serif;
+}
+.post-form.disable {
+  display: none;
+}
+.post-form--edit {
+  display: none;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  flex-direction: column;
+  gap: 20px;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+.post-form--edit.active {
+  display: flex;
 }
 
 .post-form__label {
@@ -44,7 +67,6 @@
 }
 
 .post-form__button--add {
-  display: block;
   padding: 14px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -60,11 +82,7 @@
   transform: scale(1.1);
   transition: all 0.2s ease-in-out;
 }
-.post-form__button--add.disable {
-  display: none;
-}
 .post-form__button--save {
-  display: none;
   padding: 14px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -80,10 +98,6 @@
   transform: scale(1.1);
   transition: all 0.2s ease-in-out;
 }
-.post-form__button--save.active {
-  display: block;
-}
-
 
 /* Card */
 
