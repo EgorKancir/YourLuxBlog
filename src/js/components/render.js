@@ -42,6 +42,7 @@ const templateSourceAdmin = `
                 <h4 class="post-card__author-name--admin">{{author}}</h4>
             </div>
             <p class="post-card__date--admin">{{date}}</p>
+            <p class="post-card__text--admin">{{text}}</p>
             <div class="post-card__btn-group--admin">
                 <a href="#post-form--edit">
                     <button class="post-card__btn-edit--admin" id="{{id}}" type="button">
@@ -51,6 +52,7 @@ const templateSourceAdmin = `
                 <button class="post-card__btn-delete--admin" id="{{id}}" type="button">
                     <span class="icon-basket" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"></span>
                 </button>
+                <a class="post-card__btn-visit--admin" id="{{id}}" href="./postPage.html" target="_blank">Visit</a>
             </div>
         </div>
 `;

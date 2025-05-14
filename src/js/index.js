@@ -75,6 +75,7 @@ if (postsGalleryAdmin) {
     postsGalleryAdmin.addEventListener('click', (event) => {
         const editButton = event.target.closest('.post-card__btn-edit--admin');
         const deleteBtn = event.target.closest('.post-card__btn-delete--admin');
+        const visitBtn = event.target.closest('.post-card__btn-visit--admin');
     
         if (editButton) {
             editElement(editButton.id);
@@ -82,6 +83,11 @@ if (postsGalleryAdmin) {
             postForm.classList.add('disable');
         } else if (deleteBtn) {
             deleteElement(deleteBtn.id);
+        } else if (visitBtn) {
+            localStorage.removeItem("selectedPostId");
+            const id = visitBtn.id;
+            console.log("ID картки:", visitBtn.id);
+            localStorage.setItem("selectedPostId", id);
         }
     });    
 }
@@ -97,7 +103,7 @@ if (postsGallery) {
             console.log("ID картки:", card.dataset.id);
             localStorage.setItem("selectedPostId", id);
         } else {
-        console.warn("Елемент #postsGallery не знайдено!");
+        console.warn("Elehement #postsGallery not found ‼️!");
         }
     });
 }
@@ -107,7 +113,7 @@ if (postPageContent) {
     if (postId) {
         renderPostPage(postId);
     } else {
-        console.warn("ID поста не знайдено в localStorage");
+        console.warn("ID post not found in localStorage");
     }
 }
 

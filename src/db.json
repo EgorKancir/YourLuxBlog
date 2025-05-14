@@ -2,8 +2,9 @@
   "posts": [
     {
       "id": "c3d4",
-      "title": "Oprah Winfrey on Success and Healing LOVE ❤️ 💖 ",
+      "title": "Oprah Winfrey on Success and Healing",
       "author": "Liam Carter",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=gates2025",
       "text": "Oprah shares her journey from hardship to global icon.",
       "cover": "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg",
       "imagesUrl": [
@@ -118,6 +119,7 @@
       "id": "vbs002",
       "title": "Elon Musk: Between the Stars and Earth",
       "author": "Max Dronov",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=gates2025",
       "text": "Elon Musk opens up about Mars, Tesla’s future, and how he deals with global pressure.",
       "cover": "https://www.spacex.com/static/images/locations/kennedy.jpg",
       "imagesUrl": [
@@ -140,6 +142,7 @@
       "id": "adm003",
       "title": "Michelle Obama: Power, Poise, and Purpose",
       "author": "Sarah Deen",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=gates2025",
       "text": "Former First Lady shares her mission to empower young women across the world.",
       "cover": "https://images.pexels.com/photos/1574660/pexels-photo-1574660.jpeg",
       "imagesUrl": [
@@ -324,6 +327,7 @@
       "id": "tsp012",
       "title": "Michelle Obama: Power, Poise, and Purpose",
       "author": "Sarah Deen",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=gates2025",
       "text": "Former First Lady shares her mission to empower young women across the world.",
       "cover": "https://images.pexels.com/photos/1574660/pexels-photo-1574660.jpeg",
       "imagesUrl": [
@@ -375,6 +379,7 @@
       "id": "bnk015",
       "title": "Keanu Reeves: Humanity in Hollywood",
       "author": "Yulia Tereshchuk",
+      "authorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=gates2025",
       "text": "Beloved actor Keanu Reeves shares his humble life philosophy and how he navigates stardom.",
       "cover": "https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg",
       "imagesUrl": [
