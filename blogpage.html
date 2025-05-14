@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="/postPage.ed472526.css">
+<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="/blogpage.0bdb7a3f.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/yourluxblog-logo.24490bc6.png" type="image/x-icon">
     <title>YourLuxBlogPage</title>
-    <link rel="stylesheet" href="/postPage.cd700e06.css">
-    <link rel="stylesheet" href="/postPage.60daf31c.css">
-    <link rel="stylesheet" href="/postPage.c92073ef.css">
+    <link rel="stylesheet" href="/blogpage.cd700e06.css">
+    <link rel="stylesheet" href="/blogpage.60daf31c.css">
+    <link rel="stylesheet" href="/blogpage.c92073ef.css">
 </head>
 <body>
     <header class="header header--page">
@@ -24,7 +24,7 @@
             </nav>
             <section class="hero">
                 <div class="container hero__slogan-group">
-                    <h2 class="hero__title">Explore the full story</h2>
+                    <h2 class="hero__title">Explore the full story LOVE</h2>
                 </div>
             </section>
         </div>
@@ -37,7 +37,7 @@
                 <input class="post-comment-form__input" type="text" id="commentatorName" placeholder="Your Name" required="">
             </label>
             <label class="post-comment-form__label" for="commentatorComment">
-                <textarea class="post-comment-form__textarea" id="commentatorComment" placeholder="Add your comment" required=""></textarea>
+                <textarea class="post-comment-form__textarea" type="text" id="commentatorComment" placeholder="Add your comment" required=""></textarea>
             </label>
             <button class="post-comment-form__submit">Send</button>
         </form>
@@ -73,7 +73,38 @@
             <p class="footer__signature">© 2025 Kantsyr Yehor</p>
         </div>
     </footer>
+    <!-- <template id="post-page__template">
+        <section class="post">
+            <div class="post__info-group">
+                <h2 class="post__title">{{title}}</h2>
+                <div class="post__author-info">
+                    <img class="post__author-image" src="{{authorAvatar}}" alt="{{author}}">
+                    <h4 class="post__author-name">{{author}}</h4>
+                </div>
+                <p class="post__date">{{date}}</p>
+            </div>
+            <p class="post__main-text">{{text}}</p>
+            <div class="post__gallery">
+                {{#each imagesUrl}}
+                <img class="post__gallery-image" src="{{this}}" alt="Img">
+                {{/each}}
+            </div>
+            <div class="post-comments">
+                <h3 class="post-comments__comments-number">{{commentsNumber}} comments</h3>
+                {{#each postComments}}
+                    <div class="post-comments__comment">
+                        <div class="post-comments__commentator-info">
+                            <img class="post-comments__commentator-avatar" src="{{commentatorAvatar}}" alt="{{commentatorName}}">
+                            <h4 class="post-comments__commentator-name">{{commentatorName}}</h4>
+                            <p class="post-comments__date">{{commentDate}}</p>
+                        </div>
+                        <p class="post-comments__commentator-comment">{{commentatorComment}}</p>
+                    </div>
+                {{/each}}
+            </div>
+        </section>
+    </template> -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
-    <script type="module" src="/postPage.6528c13b.js"></script>
+    <script type="module" src="/blogpage.6528c13b.js"></script>
 
 </body></html>

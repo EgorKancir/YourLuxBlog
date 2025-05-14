@@ -1,0 +1,115 @@
+@font-face {
+  font-family: icomoon;
+  src: url("icomoon.a65002c6.eot");
+  src: url("icomoon.a65002c6.eot#iefix") format("embedded-opentype"), url("icomoon.f50347c7.ttf") format("truetype"), url("icomoon.9a1c284e.woff") format("woff"), url("icomoon.7251f843.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  speak: never;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-family: icomoon !important;
+}
+
+.icon-basket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-basket:before {
+  content: "";
+  color: inherit;
+  font-size: 20px;
+}
+
+.icon-setings:before {
+  content: "";
+}
+
+.icon-download .path1:before {
+  content: "";
+  color: #333;
+}
+
+.icon-download .path2:before {
+  content: "";
+  color: #fff;
+  margin-left: -1em;
+}
+
+.icon-download .path3:before {
+  content: "";
+  color: #d6d6d6;
+  margin-left: -1em;
+}
+
+.icon-download .path4:before {
+  content: "";
+  color: #afafaf;
+  margin-left: -1em;
+}
+
+.icon-download .path5:before {
+  content: "";
+  color: #333;
+  margin-left: -1em;
+}
+
+.icon-download .path6:before {
+  content: "";
+  color: #afafaf;
+  margin-left: -1em;
+}
+
+.icon-download .path7:before {
+  content: "";
+  color: #fff;
+  opacity: .4;
+  margin-left: -1em;
+}
+
+.icon-download .path8:before {
+  content: "";
+  color: #333;
+  margin-left: -1em;
+}
+
+.icon-download .path9:before {
+  content: "";
+  color: #0ba4e0;
+  margin-left: -1em;
+}
+
+.icon-download .path10:before {
+  content: "";
+  color: #333;
+  margin-left: -1em;
+}
+
+.icon-number-list:before {
+  content: "";
+}
+
+.icon-pen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-pen:before {
+  content: "";
+  color: inherit;
+  font-size: 20px;
+}
+/*# sourceMappingURL=YourLuxBlog.60daf31c.css.map */

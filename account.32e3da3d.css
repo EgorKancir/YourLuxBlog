@@ -1,0 +1,212 @@
+.header--page {
+  background-color: #0000 !important;
+  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/2019/products/Taycan-Interieur/pictures/b-P19_0572_a3_rgb.jpg/jcr:content/b-P19_0572_a3_rgb.jpg") !important;
+  background-position: center !important;
+  background-repeat: repeat, repeat !important;
+  background-size: auto, auto !important;
+  background-attachment: scroll, scroll !important;
+  background-origin: padding-box, padding-box !important;
+  background-clip: border-box, border-box !important;
+}
+
+.post-form {
+  color: #f5f5f5;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  font-family: Segoe UI, sans-serif;
+  display: flex;
+  box-shadow: 0 0 20px #0009;
+}
+
+.post-form.disable {
+  display: none;
+}
+
+.post-form--edit {
+  color: #f5f5f5;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  font-family: Segoe UI, sans-serif;
+  display: none;
+  box-shadow: 0 0 20px #0009;
+}
+
+.post-form--edit.active {
+  display: flex;
+}
+
+.post-form__label {
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+}
+
+.post-form__input, .post-form__textarea {
+  color: #f0f0f0;
+  background-color: #2b2b2b;
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid #444;
+  margin-top: 6px;
+  padding: 12px;
+  font-size: 15px;
+  transition: all .3s;
+}
+
+.post-form__input:focus, .post-form__textarea:focus {
+  background-color: #333;
+  outline: 2px solid gold;
+}
+
+.post-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.post-form__button--add {
+  color: #000;
+  cursor: pointer;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all .3s;
+}
+
+.post-form__button--add:hover {
+  opacity: .8;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.post-form__button--save {
+  color: #000;
+  cursor: pointer;
+  background: #347e43;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+.post-form__button--save:hover {
+  opacity: .8;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.post-card--admin {
+  background-color: #fff;
+  border-radius: 16px;
+  max-width: 400px;
+  margin: 20px 0;
+  padding: 20px;
+  transition: transform .3s;
+  box-shadow: 0 4px 12px #00000014;
+}
+
+.post-card--admin:hover {
+  transform: translateY(-5px);
+}
+
+.post-card__cover--admin {
+  object-fit: cover;
+  border-radius: 12px;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 16px;
+}
+
+.post-card__title--admin {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.post-card__author-info--admin {
+  align-items: center;
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.post-card__author-image--admin {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.post-card__author-name--admin {
+  color: #666;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.post-card__date--admin {
+  color: #999;
+  margin-bottom: 12px;
+  font-size: .9rem;
+}
+
+.post-card__btn-group--admin {
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+}
+
+.post-card__btn-edit--admin {
+  box-sizing: border-box;
+  fill: #000;
+  background: inherit;
+  cursor: pointer;
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  position: relative;
+}
+
+.post-card__btn-edit--admin:hover {
+  color: green;
+  transition: all .3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.post-card__btn-delete--admin {
+  box-sizing: border-box;
+  fill: #000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  position: relative;
+}
+
+.post-card__btn-delete--admin:hover {
+  color: red;
+  transition: all .3s ease-in-out;
+  transform: scale(1.1);
+}
+/*# sourceMappingURL=account.32e3da3d.css.map */

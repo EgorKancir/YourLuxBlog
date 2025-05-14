@@ -1,0 +1,197 @@
+body {
+  background: linear-gradient(#0a0a0a 0%, #121212 50%, #1c1c1c 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.header {
+  background-color: #0000;
+  background-image: linear-gradient(#0009 100%, #fff0 100%), url("hero-background-new.f7130cd0.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+  width: 100%;
+  height: 800px;
+  padding: 20px 0;
+}
+
+.header__content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  display: flex;
+  position: relative;
+}
+
+.logo__link {
+  color: #d4af37;
+  font-size: 100px;
+}
+
+.header__account-link {
+  color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  padding: 8px 15px;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+}
+
+.header__account-link:hover {
+  opacity: .7;
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
+.header__account-link--active {
+  color: #d4af37;
+}
+
+.navigation__list {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.navigation__link {
+  color: #fff;
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+  display: block;
+}
+
+.navigation__link:hover {
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
+.navigation__link--active {
+  color: #d4af37;
+  border-bottom: 2px solid #d4af37;
+  border-radius: 5px;
+  transform: scale(1.1);
+}
+
+main {
+  background: linear-gradient(#000000b3 0%, #906d25ad 59%, #ebb3269c 100%);
+  padding: 40px 0;
+}
+
+.hero {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 300px;
+  width: 100%;
+  display: flex;
+}
+
+.hero__slogan-group {
+  justify-content: start;
+  align-items: center;
+  display: flex;
+}
+
+.hero__title {
+  width: 400px;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-size: 60px;
+}
+
+.footer {
+  padding: 40px 0;
+}
+
+.footer__content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  display: flex;
+}
+
+.footer__top-group {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+}
+
+.navigation__list--footer {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.navigation__link--footer {
+  color: #fff;
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+  display: block;
+}
+
+.social-media__list {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.social-media__link {
+  color: #fff;
+  font-size: 15px;
+  transition: all .3s ease-in-out;
+  display: block;
+}
+
+.social-media__link:hover {
+  color: #d4af37;
+  transform: scale(1.1);
+}
+
+.footer__logo-link {
+  color: #d4af37;
+  font-size: 40px;
+}
+
+.footer__signature {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+/*# sourceMappingURL=YourLuxBlog.c92073ef.css.map */
