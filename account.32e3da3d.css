@@ -1,12 +1,12 @@
 .header--page {
-  background-color: #0000 !important;
-  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/2019/products/Taycan-Interieur/pictures/b-P19_0572_a3_rgb.jpg/jcr:content/b-P19_0572_a3_rgb.jpg") !important;
-  background-position: center !important;
-  background-repeat: repeat, repeat !important;
-  background-size: auto, auto !important;
-  background-attachment: scroll, scroll !important;
-  background-origin: padding-box, padding-box !important;
-  background-clip: border-box, border-box !important;
+  background-color: #0000;
+  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/2019/products/Taycan-Interieur/pictures/b-P19_0572_a3_rgb.jpg/jcr:content/b-P19_0572_a3_rgb.jpg");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: auto, auto;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
 }
 
 .post-form {
@@ -120,10 +120,6 @@
   box-shadow: 0 4px 12px #00000014;
 }
 
-.post-card--admin:hover {
-  transform: translateY(-5px);
-}
-
 .post-card__cover--admin {
   object-fit: cover;
   border-radius: 12px;
@@ -165,6 +161,14 @@
   font-size: .9rem;
 }
 
+.post-card__text--admin {
+  color: #000;
+  width: auto;
+  margin-bottom: 12px;
+  font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+
 .post-card__btn-group--admin {
   justify-content: start;
   align-items: center;
@@ -183,12 +187,12 @@
   width: 20px;
   height: 20px;
   padding: 5px;
+  transition: all .3s ease-in-out;
   position: relative;
 }
 
 .post-card__btn-edit--admin:hover {
   color: green;
-  transition: all .3s ease-in-out;
   transform: scale(1.1);
 }
 
@@ -201,12 +205,29 @@
   width: 20px;
   height: 20px;
   padding: 5px;
+  transition: all .3s ease-in-out;
   position: relative;
 }
 
 .post-card__btn-delete--admin:hover {
   color: red;
+  transform: scale(1.1);
+}
+
+.post-card__btn-visit--admin {
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 3px 7px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
   transition: all .3s ease-in-out;
+}
+
+.post-card__btn-visit--admin:hover {
+  color: #fff;
+  background-color: gold;
   transform: scale(1.1);
 }
 /*# sourceMappingURL=account.32e3da3d.css.map */

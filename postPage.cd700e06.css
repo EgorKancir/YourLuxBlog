@@ -1,12 +1,12 @@
 .header--page {
-  background-color: #0000 !important;
-  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://res.cloudinary.com/dljmf7bk8/image/upload/f_auto,fl_lossy,c_limit,w_1920,dpr_auto,q_75/v1716989265/S24_0908_fine_36fec7579e.webp") !important;
-  background-position: center !important;
-  background-repeat: repeat, repeat !important;
-  background-size: auto, auto !important;
-  background-attachment: scroll, scroll !important;
-  background-origin: padding-box, padding-box !important;
-  background-clip: border-box, border-box !important;
+  background-color: #0000;
+  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://res.cloudinary.com/dljmf7bk8/image/upload/f_auto,fl_lossy,c_limit,w_1920,dpr_auto,q_75/v1716989265/S24_0908_fine_36fec7579e.webp");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: auto, auto;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
 }
 
 .main-post-page {
@@ -136,13 +136,14 @@
   border: none;
   border-radius: 8px;
   outline: 1px solid #444;
+  width: 250px;
   margin-top: 6px;
   padding: 12px;
   font-size: 15px;
   transition: all .3s;
 }
 
-.post-comment-form:focus, .post-comment-form__textarea:focus {
+.post-comment-form__input:focus, .post-comment-form__textarea:focus {
   background-color: #333;
   outline: 2px solid gold;
 }

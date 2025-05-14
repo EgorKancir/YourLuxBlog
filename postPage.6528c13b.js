@@ -736,11 +736,18 @@ if (postForm) postForm.addEventListener("submit", (event)=>{
 if (postsGalleryAdmin) postsGalleryAdmin.addEventListener('click', (event)=>{
     const editButton = event.target.closest('.post-card__btn-edit--admin');
     const deleteBtn = event.target.closest('.post-card__btn-delete--admin');
+    const visitBtn = event.target.closest('.post-card__btn-visit--admin');
     if (editButton) {
         (0, _update.editElement)(editButton.id);
         postFormEdit.classList.add('active');
         postForm.classList.add('disable');
     } else if (deleteBtn) (0, _delete.deleteElement)(deleteBtn.id);
+    else if (visitBtn) {
+        localStorage.removeItem("selectedPostId");
+        const id = visitBtn.id;
+        console.log("ID \u043A\u0430\u0440\u0442\u043A\u0438:", visitBtn.id);
+        localStorage.setItem("selectedPostId", id);
+    }
 });
 // Post Page
 if (postsGallery) postsGallery.addEventListener("click", (event)=>{
@@ -750,12 +757,12 @@ if (postsGallery) postsGallery.addEventListener("click", (event)=>{
         const id = card.dataset.id;
         console.log("ID \u043A\u0430\u0440\u0442\u043A\u0438:", card.dataset.id);
         localStorage.setItem("selectedPostId", id);
-    } else console.warn("\u0415\u043B\u0435\u043C\u0435\u043D\u0442 #postsGallery \u043D\u0435 \u0437\u043D\u0430\u0439\u0434\u0435\u043D\u043E!");
+    } else console.warn("Elehement #postsGallery not found \u203C\uFE0F!");
 });
 if (postPageContent) {
     const postId = localStorage.getItem("selectedPostId");
     if (postId) (0, _renderPostPage.renderPostPage)(postId);
-    else console.warn("ID \u043F\u043E\u0441\u0442\u0430 \u043D\u0435 \u0437\u043D\u0430\u0439\u0434\u0435\u043D\u043E \u0432 localStorage");
+    else console.warn("ID post not found in localStorage");
 }
 // Search
 const searchInput = document.getElementById("search-input");
@@ -17119,6 +17126,7 @@ const templateSourceAdmin = `
                 <h4 class="post-card__author-name--admin">{{author}}</h4>
             </div>
             <p class="post-card__date--admin">{{date}}</p>
+            <p class="post-card__text--admin">{{text}}</p>
             <div class="post-card__btn-group--admin">
                 <a href="#post-form--edit">
                     <button class="post-card__btn-edit--admin" id="{{id}}" type="button">
@@ -17128,6 +17136,7 @@ const templateSourceAdmin = `
                 <button class="post-card__btn-delete--admin" id="{{id}}" type="button">
                     <span class="icon-basket" style="width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;"></span>
                 </button>
+                <a class="post-card__btn-visit--admin" id="{{id}}" href="./postPage.html" target="_blank">Visit</a>
             </div>
         </div>
 `;

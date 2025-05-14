@@ -1,12 +1,12 @@
 .header--page {
-  background-color: #0000 !important;
-  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://images.pexels.com/photos/31846763/pexels-photo-31846763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") !important;
-  background-position: center !important;
-  background-repeat: repeat, repeat !important;
-  background-size: auto, auto !important;
-  background-attachment: scroll, scroll !important;
-  background-origin: padding-box, padding-box !important;
-  background-clip: border-box, border-box !important;
+  background-color: #0000;
+  background-image: linear-gradient(#0009 100%, #fff0 100%), url("https://images.pexels.com/photos/31846763/pexels-photo-31846763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: auto, auto;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
 }
 
 .main-posts {
