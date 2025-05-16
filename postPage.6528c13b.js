@@ -680,6 +680,8 @@ parcelHelpers.export(exports, "postPageGallery", ()=>postPageGallery);
 var _debounce = require("debounce");
 var _debounceDefault = parcelHelpers.interopDefault(_debounce);
 var _comments = require("./components/comments");
+var _observer = require("./components/observer");
+var _homeObserver = require("./components/homeObserver");
 var _viewPhoto = require("./components/viewPhoto");
 var _formCleaner = require("./components/formCleaner");
 var _post = require("./components/post");
@@ -770,8 +772,21 @@ if (searchInput) searchInput.addEventListener("input", (0, _debounceDefault.defa
     const inputValue = searchInput.value;
     (0, _render.renderPostCard)(inputValue);
 }, 300));
+const cardList = document.querySelectorAll('.post-card');
+console.log(cardList);
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+        else entry.target.classList.remove('visible');
+    });
+}, {
+    threshold: 0.2
+});
+cardList.forEach((element)=>{
+    observer.observe(element);
+});
 
-},{"debounce":"7NAJV","./components/comments":"6ls9F","./components/formCleaner":"5CBvP","./components/post":"3Ynr1","./components/render":"1cZ6U","./components/update":"7Dhvh","./components/delete":"bQTu7","./components/renderPostPage":"7APnJ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./components/viewPhoto":"b9WCc"}],"7NAJV":[function(require,module,exports,__globalThis) {
+},{"debounce":"7NAJV","./components/comments":"6ls9F","./components/formCleaner":"5CBvP","./components/post":"3Ynr1","./components/render":"1cZ6U","./components/update":"7Dhvh","./components/delete":"bQTu7","./components/renderPostPage":"7APnJ","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./components/viewPhoto":"b9WCc","./components/observer":"l8nZE","./components/homeObserver":"4nnu9"}],"7NAJV":[function(require,module,exports,__globalThis) {
 function debounce(function_, wait = 100, options = {}) {
     if (typeof function_ !== 'function') throw new TypeError(`Expected the first parameter to be a function, got \`${typeof function_}\`.`);
     if (wait < 0) throw new RangeError('`wait` must not be negative.');
@@ -17091,15 +17106,15 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _index = require("../index");
 const templateSource = `
-        <a class="post-card" data-id="{{id}}" href="./postPage.html">
-            <img class="post-card__cover" src="{{cover}}" alt="img">
-            <h3 class="post-card__title">{{title}}</h3>
-            <div class="post-card__author-info">
-                <img class="post-card__author-image" src="{{authorAvatar}}" alt="{{author}}">
-                <h4 class="post-card__author-name">{{author}}</h4>
-            </div>
-            <p class="post-card__date">{{date}}</p>
-        </a>
+    <a class="post-card" data-id="{{id}}" href="./postPage.html">
+        <img class="post-card__cover" src="" data-cover="{{cover}}" alt="img">
+        <h3 class="post-card__title">{{title}}</h3>
+        <div class="post-card__author-info">
+            <img class="post-card__author-image" src="{{authorAvatar}}" alt="{{author}}">
+            <h4 class="post-card__author-name">{{author}}</h4>
+        </div>
+        <p class="post-card__date">{{date}}</p>
+    </a>
 `;
 async function renderPostCard(word) {
     const template = (0, _handlebarsDefault.default).compile(templateSource);
@@ -17232,6 +17247,58 @@ async function deleteElement(id) {
     }
 }
 
-},{"axios":"kooH4","./render":"1cZ6U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["6DHTQ","6kb64"], "6kb64", "parcelRequire72ec", {})
+},{"axios":"kooH4","./render":"1cZ6U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"l8nZE":[function(require,module,exports,__globalThis) {
+setTimeout(()=>{
+    const lazyGroupImage = document.querySelectorAll(".post-card__cover");
+    const lazyGroupCard = document.querySelectorAll(".post-card");
+    const lazyImageObserver = new IntersectionObserver((entries, observer)=>{
+        entries.forEach((entry)=>{
+            if (entry.isIntersecting) {
+                const realSrc = entry.target.dataset.cover;
+                if (realSrc) {
+                    entry.target.src = realSrc;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    }, {
+        threshold: 1
+    });
+    const lazyCardObserver = new IntersectionObserver((entries, observer)=>{
+        entries.forEach((entry)=>{
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.7
+    });
+    lazyGroupImage.forEach((element)=>{
+        lazyImageObserver.observe(element);
+    });
+    lazyGroupCard.forEach((element)=>{
+        lazyCardObserver.observe(element);
+    });
+}, 100);
+
+},{}],"4nnu9":[function(require,module,exports,__globalThis) {
+const lazyGroupHomeCard = document.querySelectorAll(".popular-personalities__person-element");
+const lazyHomeCardObserver = new IntersectionObserver((entries, observer)=>{
+    entries.forEach((entry)=>{
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.3
+});
+lazyGroupHomeCard.forEach((element)=>{
+    lazyHomeCardObserver.observe(element);
+});
+
+},{}]},["6DHTQ","6kb64"], "6kb64", "parcelRequire72ec", {})
 
 //# sourceMappingURL=postPage.6528c13b.js.map
