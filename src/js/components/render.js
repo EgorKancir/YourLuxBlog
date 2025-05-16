@@ -3,15 +3,15 @@ import axios from "axios";
 import { postsGallery, postsGalleryAdmin } from "../index"
 
 const templateSource = `
-        <a class="post-card" data-id="{{id}}" href="./postPage.html">
-            <img class="post-card__cover" src="{{cover}}" alt="img">
-            <h3 class="post-card__title">{{title}}</h3>
-            <div class="post-card__author-info">
-                <img class="post-card__author-image" src="{{authorAvatar}}" alt="{{author}}">
-                <h4 class="post-card__author-name">{{author}}</h4>
-            </div>
-            <p class="post-card__date">{{date}}</p>
-        </a>
+    <a class="post-card" data-id="{{id}}" href="./postPage.html">
+        <img class="post-card__cover" src="" data-cover="{{cover}}" alt="img">
+        <h3 class="post-card__title">{{title}}</h3>
+        <div class="post-card__author-info">
+            <img class="post-card__author-image" src="{{authorAvatar}}" alt="{{author}}">
+            <h4 class="post-card__author-name">{{author}}</h4>
+        </div>
+        <p class="post-card__date">{{date}}</p>
+    </a>
 `;
 
 export async function renderPostCard(word) {

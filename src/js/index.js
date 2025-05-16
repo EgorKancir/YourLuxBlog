@@ -1,6 +1,8 @@
 import debounce from "debounce";
 
 import "./components/comments";
+import "./components/observer";
+import "./components/homeObserver"
 import { viewPhotoFunc } from "./components/viewPhoto";
 import { formCleaner } from "./components/formCleaner";
 import { createPost } from "./components/post";
@@ -129,3 +131,23 @@ if (searchInput) {
 }
 
 
+
+
+const cardList = document.querySelectorAll('.post-card');
+console.log(cardList);
+
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {  
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+        }
+    );
+}, {threshold: 0.2});
+
+cardList.forEach(element => {
+    observer.observe(element);
+});

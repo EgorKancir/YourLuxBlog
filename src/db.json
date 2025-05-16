@@ -20,6 +20,12 @@
           "commentatorName": "Anna",
           "commentDate": "Tue May 13 2025",
           "commentatorComment": "I love Oprah so much!"
+        },
+        {
+          "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=i9s1d5je",
+          "commentatorName": "Yehor",
+          "commentDate": "Fri May 16 2025",
+          "commentatorComment": "Wow"
         }
       ]
     },
@@ -82,7 +88,7 @@
         "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg"
       ],
       "date": "Fri May 16 2025",
-      "commentsNumber": 5,
+      "commentsNumber": 1,
       "postComments": [
         {
           "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=feministvoice",
@@ -128,7 +134,7 @@
         "https://images.pexels.com/photos/23769/pexels-photo.jpg"
       ],
       "date": "Tue May 13 2025",
-      "commentsNumber": 2,
+      "commentsNumber": 1,
       "postComments": [
         {
           "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=techie",
@@ -267,7 +273,7 @@
         "https://images.pexels.com/photos/1040882/pexels-photo-1040882.jpeg"
       ],
       "date": "Tue May 06 2025",
-      "commentsNumber": 4,
+      "commentsNumber": 1,
       "postComments": [
         {
           "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=queenbee",
@@ -290,7 +296,7 @@
         "https://images.pexels.com/photos/3215760/pexels-photo-3215760.jpeg"
       ],
       "date": "Mon May 05 2025",
-      "commentsNumber": 3,
+      "commentsNumber": 1,
       "postComments": [
         {
           "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=subscriber",
@@ -336,7 +342,7 @@
         "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
       ],
       "date": "Tue May 13 2025",
-      "commentsNumber": 5,
+      "commentsNumber": 1,
       "postComments": [
         {
           "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=swiftie",
@@ -388,7 +394,7 @@
         "https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg"
       ],
       "date": "Wed May 14 2025",
-      "commentsNumber": 4,
+      "commentsNumber": 1,
       "postComments": [
         {
           "commentatorAvatar": "https://api.dicebear.com/7.x/adventurer/png?seed=leader",
